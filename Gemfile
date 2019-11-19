@@ -15,12 +15,13 @@ gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 4.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
-gem 'semantic-ui-sass'
-gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
 gem "pry-rails"
+gem 'semantic-ui-sass'
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 
 group :development do
