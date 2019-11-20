@@ -3,8 +3,7 @@ class AppointmentsController < ApplicationController
 
   def index
     @doctors = @doctor.appointments.where(@doctors)
-    @nurses = @doctor.appointments.where('nurse')
-    @patients = @doctor.appointments.where('patient')
+    @appointments = @doctor.appointments.where('appointment')
   end
 
   def new

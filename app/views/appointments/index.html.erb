@@ -2,13 +2,13 @@
 <%= link_to 'Add appointment', new_doctor_appointment_path(@doctor) %>
 <hr />
 
-<h2>Doctor</h2>
-<ul>
+
   <% @doctors.each do |doctor| %>
     <li>
       <%= @doctor.users.name %>
       <br />
-      <%= link_to 'Remove', doctor_appointments_path(@doctor), method: :delete %>
+      <%= link_to 'Delete',@doctor, method: :delete %>
     </li>
   <% end %>
 </ul>
+
