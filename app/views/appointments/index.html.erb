@@ -6,29 +6,9 @@
 <ul>
   <% @doctors.each do |doctor| %>
     <li>
-      <%= doctor.user.full_name %>
+      <%= @doctor.users.name %>
       <br />
-      <%= link_to 'Remove', doctor_appointment_path(@doctor, doctor), method: :delete %>
+      <%= link_to 'Remove', doctor_appointments_path(@doctor), method: :delete %>
     </li>
   <% end %>
-</ul>
-<h2>Nurse</h2>
-<ul>
-  <% @nurses.each do |nurse| %>
-    <li>
-      <%= nurse.user.full_name %>
-      <br />
-      <%= link_to 'Remove', doctor_appointment_path(@doctor, nurse), method: :delete %>
-    </li>
- <% end %>
-</ul>
-<h2>Student</h2>
-<ul>
-  <% @students.each do |student| %>
-    <li>
-      <%= student.user.full_name %>
-      <br />
-      <%= link_to 'Remove', doctor_appointment_path(@doctor, student), method: :delete %>
-   </li>
- <% end %>
 </ul>

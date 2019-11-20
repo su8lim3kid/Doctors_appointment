@@ -2,13 +2,13 @@ class AppointmentsController < ApplicationController
   before_action :set_doctor
 
   def index
-    @docor = @doctor.appointments.where(role: 'doc')
-    @nurses = @doctor.appointments.where(role: 'nurse')
-    @patients = @doctor.appointments.where(role: 'patient')
+    @doctors = @doctor.appointments.where(@doctors)
+    @nurses = @doctor.appointments.where('nurse')
+    @patients = @doctor.appointments.where('patient')
   end
 
   def new
-    @users = User.all - @doctor.user
+    @users = User.all - @doctor.users
     @appointment = @doctor.appointments.new
   end
 
@@ -33,6 +33,6 @@ class AppointmentsController < ApplicationController
    end
 
    def appointment_params
-     params.require(:appointment).permit(:role, :user_id)
+     params.require(:appointment).permit(:user_id)
    end
-end
+  end
